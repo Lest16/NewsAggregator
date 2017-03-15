@@ -2,14 +2,16 @@ namespace NewsAggregator.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Models.NewsContext>
+    using NewsAggregator.Domain;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<NewsContext>
     {
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Models.NewsContext context)
+        protected override void Seed(NewsContext context)
         {
             //  This method will be called after migrating to the latest version.
 

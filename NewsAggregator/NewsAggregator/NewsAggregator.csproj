@@ -129,16 +129,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Domain\NewsModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703141927157_MigrateDB.cs" />
-    <Compile Include="Migrations\201703141927157_MigrateDB.Designer.cs">
-      <DependentUpon>201703141927157_MigrateDB.cs</DependentUpon>
+    <Compile Include="Mapping\NewsMapper.cs" />
+    <Compile Include="Migrations\201703150940170_MigrationDb.cs" />
+    <Compile Include="Migrations\201703150940170_MigrationDb.Designer.cs">
+      <DependentUpon>201703150940170_MigrationDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\News.cs" />
-    <Compile Include="Models\NewsContext.cs" />
+    <Compile Include="Domain\NewsContext.cs" />
     <Compile Include="Models\NewsShort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -188,8 +190,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703141927157_MigrateDB.resx">
-      <DependentUpon>201703141927157_MigrateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703150940170_MigrationDb.resx">
+      <DependentUpon>201703150940170_MigrationDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

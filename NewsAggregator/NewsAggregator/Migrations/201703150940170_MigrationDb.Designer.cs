@@ -7,13 +7,13 @@ namespace NewsAggregator.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class MigrateDB : IMigrationMetadata
+    public sealed partial class MigrationDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrateDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrationDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703141927157_MigrateDB"; }
+            get { return "201703150940170_MigrationDb"; }
         }
         
         string IMigrationMetadata.Source

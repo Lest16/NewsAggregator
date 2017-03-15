@@ -3,12 +3,12 @@ namespace NewsAggregator.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class MigrateDB : DbMigration
+    public partial class MigrationDb : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.NewsShorts",
+                "dbo.NewsModels",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -18,7 +18,6 @@ namespace NewsAggregator.Migrations
                         Summary = c.String(),
                         PictureId = c.Int(nullable: false),
                         DetailDescription = c.String(),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -26,7 +25,7 @@ namespace NewsAggregator.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.NewsShorts");
+            DropTable("dbo.NewsModels");
         }
     }
 }
