@@ -8,7 +8,7 @@
         public NewsShort MapNewsShort(NewsShort model, NewsModel entity)
         {
             model.Id = entity.Id;
-            model.PictureId = entity.PictureId;
+            model.PictureHref = entity.PictureHref;
             model.Source = entity.Source;
             model.Summary = entity.Summary;
             model.TimeOccurrence = entity.TimeOccurrence;
@@ -20,6 +20,7 @@
         {
             this.MapNewsShort(model, entity);
             model.DetailDescription = entity.DetailDescription;
+            model.SoucreUrl = entity.SourceUrl;
             return model;
         }
     }

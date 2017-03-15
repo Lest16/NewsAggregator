@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsAggregator", "NewsAggregator\NewsAggregator.csproj", "{8798EC71-512C-471B-AE12-A4AB5F0F3D57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsAggregator.Parsers", "NewsAggregator.Parsers\NewsAggregator.Parsers.csproj", "{75D28F0B-AFE7-4A48-9D34-623782BCFE23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsAggregator.Runner", "NewsAggregator.Runner\NewsAggregator.Runner.csproj", "{B507D9B9-DA26-4196-B79A-1470CEA14812}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{8798EC71-512C-471B-AE12-A4AB5F0F3D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8798EC71-512C-471B-AE12-A4AB5F0F3D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8798EC71-512C-471B-AE12-A4AB5F0F3D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D28F0B-AFE7-4A48-9D34-623782BCFE23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D28F0B-AFE7-4A48-9D34-623782BCFE23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D28F0B-AFE7-4A48-9D34-623782BCFE23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D28F0B-AFE7-4A48-9D34-623782BCFE23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B507D9B9-DA26-4196-B79A-1470CEA14812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B507D9B9-DA26-4196-B79A-1470CEA14812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B507D9B9-DA26-4196-B79A-1470CEA14812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B507D9B9-DA26-4196-B79A-1470CEA14812}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

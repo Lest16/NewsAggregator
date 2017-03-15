@@ -14,6 +14,6 @@
 
         public string Summary { get; set; }
 
-        public int PictureId { get; set; }
+        public string PictureHref { get; set; }
     }
 }
