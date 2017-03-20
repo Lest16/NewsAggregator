@@ -34,26 +34,48 @@ p.newsTitle {
     font-weight: bold;
 }
 
-table.content {
-    padding: 12px;
-    margin-top: 20px;
-}
 
 p.date {
     font-size: 11px;
     color: #b0c4de;
 }
 
-td {
-  padding: 10px;
-  padding-left: 20px;
+div.imageDiv {
+    display: table-cell;
+    padding: 18px;
+    vertical-align: middle;
 }
 
-tr.newsItem.hover{
-    -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3); 
-    -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 0px rgba(0, 0, 0, 0.3); 
-     box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.3), 0 1px 0px rgba(0, 0, 0, 0.1); 
-     box-shadow: 7px 7px 5px rgba(0,0,0,0.6); /* Тень */
+div.cellDiv {
+    display: table-cell;
+    padding-left: 20px;
+    padding-top: 40px;
+    vertical-align: middle;
+}
 
-    border-radius: 5px; /* Радиус скругления */
+div.content {
+    padding-top: 15px;
+}
+
+div.tableDiv {
+    display: table;
+    vertical-align: middle;
+
+}
+div.newsItem {
+    vertical-align: middle;
+}
+
+span.sourceText {
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.4);
+    font-size: 16px;
+
+}
+
+div.newsItem:hover {
+    -webkit-box-shadow: inset 0 0 3px;
+    -ms-box-shadow: inset 0 0 3px;
+    box-shadow: inset 0 0 3px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
 }

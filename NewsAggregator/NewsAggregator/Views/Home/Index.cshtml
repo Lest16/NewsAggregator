@@ -11,27 +11,29 @@
 </head>
 <body>
     <div>
-        <table class="content">
+        <div class="content">
             @foreach (var news in Model)
             {
-                <tr class="newsItem">
-                    <td>
-                        <img src="@news.PictureHref" width="200" height="120" alt=@news.Summary>
-                        <td >
+                <div class="newsItem">
+                    <div class="tableDiv">
+                        <div class="imageDiv"><img class="mainNews" src="@news.PictureHref" width="200" height="120" alt=@news.Summary></div>
+                        <div class="col-md-5 cellDiv">
                             <p class="newsTitle">@news.Title</p>
                             <p class="date">@news.TimeOccurrence</p>
-                        </td>
-                        <td>
-                            <p>@news.Summary</p></td>
-                        <td>
+                        </div>
+                        <div class="col-md-5 cellDiv">
+                            <p>@news.Summary</p>
                             <p>
                                 <a href="/Home/Detailed/@news.Id">Читать подробнее</a>
                             </p>
-                        </td>
-                    </td>
-                </tr>
+                        </div>
+                        <div class="col-md-2 cellDiv">
+                            <span class="sourceText">@news.Source</span>
+                        </div>
+                    </div>
+                </div>
             }
-        </table>
+        </div>
     </div>
 </body>
 </html>
