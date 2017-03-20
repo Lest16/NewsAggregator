@@ -3,11 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Text;
+    using System.Xml;
 
     using AngleSharp;
     using AngleSharp.Dom;
 
-    using Domain;
+    using NewsAggregator.Domain;
 
     public class MordovMediaParser : IParser
     {
@@ -16,23 +18,48 @@
         public List<NewsModel> ParseNews()
         {
             var page = this.GetPage("http://www.mordovmedia.ru/news/");
+            var srcList = this.ParseRss();
             var news = page.QuerySelectorAll("div.news_item");
             var newsModelList = new List<NewsModel>();
             foreach (var itemNews in news)
             {
                 var newsModel = new NewsModel();
-                newsModel.Title = itemNews.QuerySelectorAll("a.news-title").First().TextContent;
+                newsModel.Title = itemNews.QuerySelectorAll("a.news-title, a.news_title").First().TextContent;
                 newsModel.Summary = itemNews.QuerySelectorAll("p").First().TextContent;
-                newsModel.PictureHref = itemNews.QuerySelectorAll("img").First().Attributes["src"].Value;
                 newsModel.TimeOccurrence = this.ParseDate(itemNews.QuerySelectorAll("span.date").First().TextContent);
                 newsModel.Source = this.SiteName;
-                var sourceUrl = itemNews.QuerySelectorAll("a.news-title").First().Attributes["href"].Value;
+                var sourceUrl = itemNews.QuerySelectorAll("a.news-title, a.news_title").First().Attributes["href"].Value;
                 newsModel.SourceUrl = sourceUrl;
                 var detailedTextPage = this.GetPage(sourceUrl);
                 newsModel.DetailDescription = detailedTextPage.QuerySelectorAll("div.news-text").First().TextContent;
                 newsModelList.Add(newsModel);
             }
+            for (var i = 0; i < newsModelList.Count; i++)
+            {
+                newsModelList[i].PictureHref = srcList[i];
+            }
+
             return newsModelList;
+        }
+
+        private List<string> ParseRss()
+        {
+            var rssXmlDoc = new XmlDocument();
+            rssXmlDoc.Load("http://www.mordovmedia.ru/news/rss/");
+            var rssNodes = rssXmlDoc.SelectNodes("rss/channel/item");
+            var srcList = new List<string>();
+            foreach (XmlNode rssNode in rssNodes)
+            {
+                var rssSubNode = rssNode.SelectSingleNode("description");
+                var description = rssSubNode?.FirstChild.Value;
+                var src = description?.Substring(
+                    description.LastIndexOf("src=", StringComparison.Ordinal) + 5,
+                    description.LastIndexOf(" style", StringComparison.Ordinal) - 11);
+                srcList.Add(src);
+            }
+
+            // Return the string that contain the RSS items
+            return srcList;
         }
 
         private IDocument GetPage(string address)

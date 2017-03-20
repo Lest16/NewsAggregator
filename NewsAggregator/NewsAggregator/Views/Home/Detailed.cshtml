@@ -1,0 +1,47 @@
+﻿@model NewsAggregator.Models.News
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Detailed</title>
+</head>
+<body>
+<div>
+    @Model.TimeOccurrence
+    <table>
+        <tr>
+            <td>
+                <p>@Model.Title</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="@Model.PictureHref" width="300" height="300" alt=@Model.Summary></img>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>@Model.Summary</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>@Model.DetailDescription</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a>@Model.SoucreUrl</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>@Model.Source</p>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

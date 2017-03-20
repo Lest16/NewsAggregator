@@ -16,7 +16,7 @@
             return model;
         }
 
-        public NewsShort MapNews(News model, NewsModel entity)
+        public News MapNews(News model, NewsModel entity)
         {
             this.MapNewsShort(model, entity);
             model.DetailDescription = entity.DetailDescription;

@@ -15,12 +15,22 @@
     <div>
         <h3>Это просто новости</h3>
         <table>
-            
             @foreach (var news in Model)
             {
                 <tr>
+                    <td><p>@news.TimeOccurrence</p></td>
+                </tr>
+                <tr>
                     <td><p>@news.Title</p></td>
-                    <td><p><a href="/Home/Detailed/@news.Id">Читать подробнее</a></p></td>
+                </tr>
+                <tr>
+                    <td><p>@news.Summary</p></td>
+
+                    <td>
+                        <p>
+                            <a href="/Home/Detailed/@news.Id">Читать подробнее</a>
+                        </p>
+                    </td>
                 </tr>
             }
         </table>

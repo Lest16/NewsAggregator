@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsAggregator.Parsers", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsAggregator.Runner", "NewsAggregator.Runner\NewsAggregator.Runner.csproj", "{B507D9B9-DA26-4196-B79A-1470CEA14812}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsAggregator.Domain", "NewsAggregator.Domain\NewsAggregator.Domain.csproj", "{00DFF58F-B777-40B8-96B3-2021825C23D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B507D9B9-DA26-4196-B79A-1470CEA14812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B507D9B9-DA26-4196-B79A-1470CEA14812}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B507D9B9-DA26-4196-B79A-1470CEA14812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00DFF58F-B777-40B8-96B3-2021825C23D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DFF58F-B777-40B8-96B3-2021825C23D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00DFF58F-B777-40B8-96B3-2021825C23D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00DFF58F-B777-40B8-96B3-2021825C23D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

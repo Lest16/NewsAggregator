@@ -49,9 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NewsAggregator\NewsAggregator.csproj">
-      <Project>{8798EC71-512C-471B-AE12-A4AB5F0F3D57}</Project>
-      <Name>NewsAggregator</Name>
+    <ProjectReference Include="..\NewsAggregator.Domain\NewsAggregator.Domain.csproj">
+      <Project>{00DFF58F-B777-40B8-96B3-2021825C23D2}</Project>
+      <Name>NewsAggregator.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

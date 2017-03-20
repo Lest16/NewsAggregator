@@ -129,24 +129,28 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Domain\NewsModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Initializer\DbSeeder.cs" />
     <Compile Include="Mapping\NewsMapper.cs" />
     <Compile Include="Migrations\201703150940170_MigrationDb.cs" />
     <Compile Include="Migrations\201703150940170_MigrationDb.Designer.cs">
       <DependentUpon>201703150940170_MigrationDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703181331403_Add field sourceUrl.cs" />
+    <Compile Include="Migrations\201703181331403_Add field sourceUrl.Designer.cs">
+      <DependentUpon>201703181331403_Add field sourceUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\News.cs" />
-    <Compile Include="Domain\NewsContext.cs" />
     <Compile Include="Models\NewsShort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\main.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -177,6 +181,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Detailed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -193,6 +198,19 @@
     <EmbeddedResource Include="Migrations\201703150940170_MigrationDb.resx">
       <DependentUpon>201703150940170_MigrationDb.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703181331403_Add field sourceUrl.resx">
+      <DependentUpon>201703181331403_Add field sourceUrl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NewsAggregator.Domain\NewsAggregator.Domain.csproj">
+      <Project>{00DFF58F-B777-40B8-96B3-2021825C23D2}</Project>
+      <Name>NewsAggregator.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewsAggregator.Parsers\NewsAggregator.Parsers.csproj">
+      <Project>{75D28F0B-AFE7-4A48-9D34-623782BCFE23}</Project>
+      <Name>NewsAggregator.Parsers</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
