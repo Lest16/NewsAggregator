@@ -7,26 +7,23 @@
     <title>Detailed</title>
 </head>
 <body>
+<br/>
 <div>
-    @Model.TimeOccurrence
+    <span class="date">@Model.TimeOccurrence</span>
     <table>
         <tr>
             <td>
-                <p>@Model.Title</p>
+                <p class="titleDetail">@Model.Title</p>
+            </td>
+        </tr>
+        <br/>
+        <tr>
+            <td>
+                <img src="@Model.PictureHref" width="350" height="300" alt=@Model.Summary>
             </td>
         </tr>
         <tr>
-            <td>
-                <img src="@Model.PictureHref" width="300" height="320" alt=@Model.Summary>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>@Model.Summary</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            <td class="desc">
                 <p>@Model.DetailDescription</p>
             </td>
         </tr>

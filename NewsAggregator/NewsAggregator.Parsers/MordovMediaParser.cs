@@ -58,7 +58,6 @@
                 srcList.Add(src);
             }
 
-            // Return the string that contain the RSS items
             return srcList;
         }
 

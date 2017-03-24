@@ -24,9 +24,19 @@ textarea {
 }
 
 span.cap{
-    color: #ffff00;
-    font-size: 22px;
-    padding-top: 10px;
+    color: #b0c4de;
+    font-size: 26px;
+    padding-top: 15px;
+    text-shadow: 2px 4px 3px #778899;
+}
+
+p.titleDetail {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+td.desc {
+    padding-top: 40px;
 }
 
 p.newsTitle {
