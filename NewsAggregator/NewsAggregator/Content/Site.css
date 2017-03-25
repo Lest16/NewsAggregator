@@ -82,6 +82,10 @@ span.sourceText {
 
 }
 
+ul.navUl:hover{
+    color: #b0c4de;
+}
+
 div.newsItem:hover {
     -webkit-box-shadow: inset 0 0 3px;
     -ms-box-shadow: inset 0 0 3px;

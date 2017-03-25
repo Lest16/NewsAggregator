@@ -41,11 +41,11 @@
                 newsModel.SourceUrl = sourceUrl;
                 var detailedTextPage = this.GetPage(sourceUrl);
                 newsModel.Summary = detailedTextPage.QuerySelectorAll("div.article__lead-content").First().TextContent.Trim();
-                var description = String.Empty;
+                var description = string.Empty;
                 var pTags = detailedTextPage.QuerySelectorAll("div.article__main-content").First().QuerySelectorAll("p");
                 for (var i=0; i < pTags.Length - 1; i++)
                 {
-                    description += pTags[i].TextContent;
+                    description += pTags[i].TextContent + "\n";
                 }
                 newsModel.DetailDescription = description;
                 newsModelList.Add(newsModel);

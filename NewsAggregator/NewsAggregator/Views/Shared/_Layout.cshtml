@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using NewsAggregator.Controllers
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -13,9 +14,14 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <span class="cap">Новости Саранска</span>
+                <a href="/Home/Index" style="text-decoration: none"><span class="cap">Новости Саранска</span></a>
             </div>
-            
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav nav-tabs navbar-right text-center top-right">
+                    <li class="@Html.IsActive("TodayNews", "Home")">@Html.ActionLink("За сегодня", "TodayNews", "Home")</li>
+                    <li class="@Html.IsActive("lastThreeDays", "Home")">@Html.ActionLink("За последние 3 дня", "lastThreeDays", "Home")</li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="container body-content">
