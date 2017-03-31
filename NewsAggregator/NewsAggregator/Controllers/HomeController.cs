@@ -56,5 +56,10 @@
             newsShorts.Sort((x, y) => y.TimeOccurrence.CompareTo(x.TimeOccurrence));
             return this.View(newsShorts);
         }
+
+        public ActionResult GetExchangeRates()
+        {
+            return this.PartialView(this.newsContext.Rates.First());
+        }
     }
 }

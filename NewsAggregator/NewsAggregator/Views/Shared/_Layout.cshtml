@@ -12,16 +12,19 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <a href="/Home/Index" style="text-decoration: none"><span class="cap">Новости Саранска</span></a>
             </div>
-            <div class="navbar-collapse collapse ">
-                <ul class="nav navbar-nav nav-tabs navbar-right text-center top-right">
+            <div class="ss">
+                <ul class="nav navbar-nav nav-tabs navbar-right text-center top-right top ss navbar-static-top">
                     <li class="@Html.IsActive("TodayNews", "Home")">@Html.ActionLink("За сегодня", "TodayNews", "Home")</li>
                     <li class="@Html.IsActive("lastThreeDays", "Home")">@Html.ActionLink("За последние 3 дня", "lastThreeDays", "Home")</li>
+                    <li class="@Html.IsActive("Index", "Home")">@Html.ActionLink("Все новости", "Index", "Home")</li>
                 </ul>
             </div>
+            <div class="rates navbar-left">@Html.Action("GetExchangeRates", "Home")</div>
+            
         </div>
     </div>
     <div class="container body-content">

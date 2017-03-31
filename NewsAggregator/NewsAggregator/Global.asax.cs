@@ -12,10 +12,12 @@
         protected void Application_Start()
         {
             /*var parser = new MordovMediaParser();*/
-            var parser = new PgParser();
+            /*var parser = new PgParser();
             parser.ParseNews();
             var dbSeeder = new DbSeeder();
             dbSeeder.AddNews(parser.ParseNews());
+            var parserRates = new ExchangeRatesParser();
+            dbSeeder.AddRates(parserRates.ParseExchangeRates());*/
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

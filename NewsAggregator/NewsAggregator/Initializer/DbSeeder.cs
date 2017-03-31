@@ -5,6 +5,7 @@
     using System.Linq;
 
     using NewsAggregator.Domain;
+    using NewsAggregator.Models;
 
     public class DbSeeder
     {
@@ -19,6 +20,12 @@
             }
 
             this.newsContext.News.AddRange(newsModels.Where(x => x.TimeOccurrence > dateTimeLatestNews));
+            this.newsContext.SaveChanges();
+        }
+
+        public void AddRates(ExchangeRates rates)
+        {
+            this.newsContext.Rates.Add(rates);
             this.newsContext.SaveChanges();
         }
     }

@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExchangeRatesParser.cs" />
     <Compile Include="IParser.cs" />
     <Compile Include="MordovMediaParser.cs" />
     <Compile Include="PgParser.cs" />

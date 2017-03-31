@@ -2,6 +2,8 @@
 {
     using System.Data.Entity;
 
+    using NewsAggregator.Models;
+
     public class NewsContext : DbContext
     {
         public NewsContext()
@@ -10,5 +12,7 @@
         }
 
         public DbSet<NewsModel> News { get; set; }
+
+        public DbSet<ExchangeRates> Rates { get; set; }
     }
 }

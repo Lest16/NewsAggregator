@@ -143,6 +143,10 @@
     <Compile Include="Migrations\201703181331403_Add field sourceUrl.Designer.cs">
       <DependentUpon>201703181331403_Add field sourceUrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703290840226_Add ExchangeRates.cs" />
+    <Compile Include="Migrations\201703290840226_Add ExchangeRates.Designer.cs">
+      <DependentUpon>201703290840226_Add ExchangeRates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\NewsShort.cs" />
@@ -184,6 +188,7 @@
     <None Include="Views\Home\Detailed.cshtml" />
     <Content Include="Views\Home\TodayNews.cshtml" />
     <Content Include="Views\Home\LastThreeDays.cshtml" />
+    <Content Include="Views\Home\GetExchangeRates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -202,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703181331403_Add field sourceUrl.resx">
       <DependentUpon>201703181331403_Add field sourceUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703290840226_Add ExchangeRates.resx">
+      <DependentUpon>201703290840226_Add ExchangeRates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

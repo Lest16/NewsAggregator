@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExchangeRates.cs" />
     <Compile Include="NewsContext.cs" />
     <Compile Include="NewsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
