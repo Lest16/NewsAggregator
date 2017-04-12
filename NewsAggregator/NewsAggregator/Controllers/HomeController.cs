@@ -48,7 +48,7 @@
         public ActionResult LastThreeDays()
         {
             var newsShorts = new List<NewsShort>();
-            foreach (var news in this.newsContext.News.Where(x => x.TimeOccurrence.Day > DateTime.Now.Day - 3))
+            foreach (var news in this.newsContext.News.Where(x => x.TimeOccurrence.Day > DateTime.Now.Day - 3 && x.TimeOccurrence.Month == DateTime.Now.Month))
             {
                 newsShorts.Add(this.mapper.MapNewsShort(new NewsShort(), news));
             }

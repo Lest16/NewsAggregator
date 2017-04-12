@@ -16,7 +16,7 @@
             var dateTimeLatestNews = new DateTime();
             if (this.newsContext.News.Count() != 0)
             {
-                dateTimeLatestNews = this.newsContext.News.ToList().Max(x => x.TimeOccurrence);
+                dateTimeLatestNews = this.newsContext.News.ToList().Where(x => x.Source == newsModels[0].Source).Max(x => x.TimeOccurrence);
             }
 
             this.newsContext.News.AddRange(newsModels.Where(x => x.TimeOccurrence > dateTimeLatestNews));

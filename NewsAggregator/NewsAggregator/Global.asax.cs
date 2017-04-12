@@ -1,5 +1,6 @@
 ﻿namespace NewsAggregator
 {
+    using System.Collections.Generic;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
@@ -11,13 +12,15 @@
     {
         protected void Application_Start()
         {
-            /*var parser = new MordovMediaParser();*/
-            /*var parser = new PgParser();
-            parser.ParseNews();
+            var parsers = new List<IParser> { new MordovMediaParser(), new PgParser() };
             var dbSeeder = new DbSeeder();
-            dbSeeder.AddNews(parser.ParseNews());
+            foreach (var parser in parsers)
+            {
+                dbSeeder.AddNews(parser.ParseNews());
+            }
+
             var parserRates = new ExchangeRatesParser();
-            dbSeeder.AddRates(parserRates.ParseExchangeRates());*/
+            dbSeeder.AddRates(parserRates.ParseExchangeRates());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
