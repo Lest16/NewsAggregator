@@ -33,6 +33,8 @@
                 newsModel.DetailDescription = detailedTextPage.QuerySelectorAll("div.news-text").First().TextContent;
                 newsModelList.Add(newsModel);
             }
+
+            newsModelList.Sort((x, y) => y.TimeOccurrence.CompareTo(x.TimeOccurrence));
             for (var i = 0; i < newsModelList.Count; i++)
             {
                 newsModelList[i].PictureHref = srcList[i];

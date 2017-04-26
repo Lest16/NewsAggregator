@@ -54,6 +54,7 @@ div.imageDiv {
     display: table-cell;
     padding: 18px;
     vertical-align: middle;
+    width: auto;
 }
 
 div.cellDiv {

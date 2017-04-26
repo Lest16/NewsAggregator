@@ -14,7 +14,7 @@
         public void AddNews(List<NewsModel> newsModels)
         {
             var dateTimeLatestNews = new DateTime();
-            if (this.newsContext.News.Count() != 0)
+            if (this.newsContext.News.Count() != 0 && this.newsContext.News.ToList().Any(x => x.Source == newsModels[0].Source))
             {
                 dateTimeLatestNews = this.newsContext.News.ToList().Where(x => x.Source == newsModels[0].Source).Max(x => x.TimeOccurrence);
             }
