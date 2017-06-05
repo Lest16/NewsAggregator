@@ -18,14 +18,14 @@
         {
             var page = this.GetPage("http://www.mordovmedia.ru/news/");
             var srcList = this.ParseRss();
-            var news = page.QuerySelectorAll("div.news_item");
+            var news = page.QuerySelectorAll("article.news_item");
             var newsModelList = new List<NewsModel>();
             foreach (var itemNews in news)
             {
                 var newsModel = new NewsModel();
                 newsModel.Title = itemNews.QuerySelectorAll("a.news-title, a.news_title").First().TextContent;
                 newsModel.Summary = itemNews.QuerySelectorAll("p").First().TextContent;
-                newsModel.TimeOccurrence = this.ParseDate(itemNews.QuerySelectorAll("span.date").First().TextContent);
+                newsModel.TimeOccurrence = this.ParseDate(itemNews.QuerySelectorAll("span.date, div.date").First().TextContent);
                 newsModel.Source = this.SiteName;
                 var sourceUrl = itemNews.QuerySelectorAll("a.news-title, a.news_title").First().Attributes["href"].Value;
                 newsModel.SourceUrl = sourceUrl;
@@ -72,8 +72,8 @@
         private DateTime ParseDate(string dateString)
         {
             var splitDate = dateString.Split(' ');
-            var splitTime = splitDate[0].Split(':');
-            if (splitDate[1] == "Сегодня")
+            var splitTime = splitDate[1].Split(':');
+            if (splitDate[0] == "Сегодня")
             {
                 return new DateTime(
                     DateTime.Now.Year,
@@ -83,7 +83,7 @@
                     int.Parse(splitTime[1]),
                     0);
             }
-            if (splitDate[1] == "Вчера")
+            if (splitDate[0] == "Вчера")
             {
                 return new DateTime(
                     DateTime.Now.Year,
